@@ -2,7 +2,7 @@ include ../.env
 BINVER=windows_amd64
 INSTALLFORMAT=x86_64.msi
 VIRTUALBOX_FULLNAME=VirtualBox-6.1.12-139181-Win.exe
-VBOXMANAGE=`C:/Program Files/Oracle/VirtualBox/vboxmanage.exe`
+VBOXMANAGE="C:/Program Files/Oracle/VirtualBox/vboxmanage.exe"
 export
 
 .ONESHELL .PHONY: prereq check_upgrade stop_vbox install_virtualbox hashicorp_gpg install_vagrant configure_vagrant install_packer
