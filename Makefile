@@ -1,7 +1,3 @@
-VBOXMANAGE="vboxmanage.exe"
-PATH := $(PATH);"C:\Program Files\Oracle\VirtualBox";"C:\HashiCorp\Vagrant\bin"
-export
-
 .ONESHELL .PHONY: install build test
 .DEFAULT_GOAL := build
 

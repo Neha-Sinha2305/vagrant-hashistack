@@ -1,7 +1,3 @@
-VBOXMANAGE="vboxmanage.exe"
-PATH := $(PATH);"C:\Program Files\Oracle\VirtualBox";"C:\HashiCorp\Vagrant\bin"
-export
-
 .DEFAULT_GOAL := default
 UNAME := $(shell uname -s)
 

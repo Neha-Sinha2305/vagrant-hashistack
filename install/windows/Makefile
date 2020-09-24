@@ -2,11 +2,8 @@ include ../.env
 BINVER=windows_amd64
 INSTALLFORMAT=x86_64.msi
 VIRTUALBOX_FULLNAME=VirtualBox-6.1.12-139181-Win.exe
-VBOXMANAGE="vboxmanage.exe"
+VBOXMANAGE := ${PROGRAMFILES}/Oracle/VirtualBox/vboxmanage.exe
 export
-
-#export PATH := $(PATH);$(PROGRAMFILES)\Oracle\VirtualBox
-#export PATH := $(PATH);"C:\HashiCorp\Vagrant\bin"
 
 .ONESHELL .PHONY: prereq check_upgrade stop_vbox install_virtualbox hashicorp_gpg install_vagrant configure_vagrant install_packer
 .DEFAULT_GOAL := check_upgrade
