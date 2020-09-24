@@ -5,8 +5,8 @@ VIRTUALBOX_FULLNAME=VirtualBox-6.1.12-139181-Win.exe
 VBOXMANAGE="vboxmanage.exe"
 export
 
-export PATH := $(PATH);"C:\Program Files\Oracle\VirtualBox"
-export PATH := $(PATH);"C:\HashiCorp\Vagrant\bin"
+#export PATH := $(PATH);"C:\Program Files\Oracle\VirtualBox"
+#export PATH := $(PATH);"C:\HashiCorp\Vagrant\bin"
 
 .ONESHELL .PHONY: prereq check_upgrade stop_vbox install_virtualbox hashicorp_gpg install_vagrant configure_vagrant install_packer
 .DEFAULT_GOAL := check_upgrade
@@ -50,12 +50,7 @@ install_vagrant:
 	gpg --verify /tmp/vagrant_SHA256SUMS.sig /tmp/vagrant_SHA256SUMS
 	curl -L -s https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT} -o /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
 	(cd /tmp; sha256sum --ignore-missing -c vagrant_SHA256SUMS)
-	TMPDIR=$(cygpath -d /tmp)
-	ls -lrt /tmp
-	(cd /tmp; msiexec //i vagrant_2.2.10_x86_64.msi //quiet //qn //norestart || true)
-	#msiexec //i "/tmp/vagrant_2.2.7_x86_64.msi"  //qn //norestart || true
-	#choco install vagrant --version=2.2.10
-	vagrant
+	(cd /tmp; msiexec //i vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT} //quiet //qn //norestart || true)
 	#SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt vagrant plugin install vagrant-certificates
 	rm /tmp/vagrant_SHA256SUMS /tmp/vagrant_SHA256SUMS.sig /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
 
