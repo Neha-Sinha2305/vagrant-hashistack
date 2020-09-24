@@ -1,0 +1,25 @@
+name: CI/CD
+on:
+  push:
+    branches: [ test_on_windows ]
+
+jobs:
+  build:
+    # Macos includes virtualbox and vagrant.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run make install
+        run: make install
+
+      - name: Versions on runner
+        run: make -C install versions
+
+      - name: Run make build
+        run: make build
+
+      - name: Make box available as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: vagrantbox
+          path: packer/output-hashistack/package.box
