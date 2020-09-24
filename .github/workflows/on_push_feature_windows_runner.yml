@@ -12,6 +12,9 @@ jobs:
       - name: Print env var
         run: make -C install/windows printPath
 
+      - name: Print program var path
+        run: make -C install/windows printPrg
+
       - name: Run make install
         run: make install
 
