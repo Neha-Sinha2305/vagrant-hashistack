@@ -15,6 +15,9 @@ jobs:
       - name: Run make install
         run: make install
 
+      - name: Print env var again
+        run: make -C install/windows printPath
+
       - name: Run make build
         run: make build
 

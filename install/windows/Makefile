@@ -68,7 +68,6 @@ install_packer:
 	rm /tmp/packer_SHA256SUMS /tmp/packer_SHA256SUMS.sig /tmp/packer_${PACKER_VERSION}_${BINVER}.zip
 
 printPath:
-	@echo "PROGRAMFILES:\t`${PROGRAMFILES}`"
-	@echo "PATH:\t`${PATH}`"
-	@echo "ProgramFiles(x86):\t`${ProgramFiles(x86)}`"
-	@echo "ProgramFiles:\t`${ProgramFiles}`"
+	@echo "PROGRAMFILES:`${PROGRAMFILES}`"
+	@echo "PATH:`${PATH}`"
+	@echo "ProgramFiles:`${ProgramFiles}`"
