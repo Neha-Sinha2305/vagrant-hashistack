@@ -55,8 +55,8 @@ install_vagrant:
 	rm /tmp/vagrant_SHA256SUMS /tmp/vagrant_SHA256SUMS.sig /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
 
 configure_vagrant:
-	mkdir -p $(HOME)/.vagrant.d
-	cp Vagrantfile $(HOME)/.vagrant.d/Vagrantfile
+	mkdir -p /c/Users/runneradmin/.vagrant.d
+	cp Vagrantfile /c/Users/runneradmin/.vagrant.d/Vagrantfile
 
 install_packer:
 	curl -L -s https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_SHA256SUMS -o /tmp/packer_SHA256SUMS
