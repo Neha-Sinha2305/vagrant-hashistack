@@ -12,6 +12,7 @@ jobs:
         run: make install
 
   build:
+    needs: install
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
