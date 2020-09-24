@@ -49,7 +49,7 @@ install_vagrant:
 	curl -L -s https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT} -o /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
 	(cd /tmp; sha256sum --ignore-missing -c vagrant_SHA256SUMS)
 	(cd /tmp; msiexec //i vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT} //quiet //qn //norestart || true)
-	#SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt vagrant plugin install vagrant-certificates
+	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt vagrant plugin install vagrant-certificates
 	rm /tmp/vagrant_SHA256SUMS /tmp/vagrant_SHA256SUMS.sig /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
 
 configure_vagrant:
