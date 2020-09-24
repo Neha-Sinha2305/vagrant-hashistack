@@ -22,3 +22,11 @@ jobs:
 
       - name: Print certs
         run: cat /etc/ssl/certs/ca-certificates.crt
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run wintest
+        run: make wintest

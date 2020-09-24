@@ -17,6 +17,9 @@ ifeq (,$(wildcard ./packer/output-hashistack/package.box))
 endif
 	$(MAKE) -C test
 
+wintest:
+	$(MAKE) -C template template_example
+
 ssh:
 	(cd template; vagrant ssh)
 
