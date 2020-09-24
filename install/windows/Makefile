@@ -54,8 +54,7 @@ install_vagrant:
 	ls -lrt /tmp
 	#(cd /tmp; msiexec //i vagrant_2.2.7_x86_64.msi //quiet //qn //norestart || true)
 	#msiexec //i "/tmp/vagrant_2.2.7_x86_64.msi"  //qn //norestart || true
-	choco install vagrant
-	ls -lrt "C:\HashiCorp\"
+	choco install vagrant --version=2.2.10
 	vagrant
 	#SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt vagrant plugin install vagrant-certificates
 	rm /tmp/vagrant_SHA256SUMS /tmp/vagrant_SHA256SUMS.sig /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
