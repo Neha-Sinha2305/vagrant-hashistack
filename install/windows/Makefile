@@ -51,7 +51,7 @@ install_vagrant:
 	curl -L -s https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT} -o /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
 	(cd /tmp; sha256sum --ignore-missing -c vagrant_SHA256SUMS)
 	TMPDIR=$(cygpath -d /tmp)
-	msiexec //i "${TMPDIR}\vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}"  //qn //norestart || true
+	msiexec //i "/tmp/vagrant_2.2.10_x86_64.msi"  //qn //norestart || true
 	vagrant
 	SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt vagrant plugin install vagrant-certificates
 	rm /tmp/vagrant_SHA256SUMS /tmp/vagrant_SHA256SUMS.sig /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
@@ -76,3 +76,6 @@ printPath:
 
 printPrg:
 	@echo "%programfiles%"
+
+
+	This installation package could not be opened.  Verify that the package exists and that you can access it, or contact the application vendor to verify that this is a valid Windows Installer package
