@@ -11,6 +11,9 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Set path
+        run: echo "::add-path::C:\HashiCorp\Vagrant\bin"
+
       - name: Run environment var
         run: env
 
