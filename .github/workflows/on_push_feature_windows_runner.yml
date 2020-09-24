@@ -4,28 +4,15 @@ on:
     branches: [ test_on_windows ]
 
 jobs:
-  build:
-    # Macos includes virtualbox and vagrant.
+  install:
+
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Print env var
-        run: make -C install/windows printPath
-
-      - name: Print program var path
-        run: make -C install/windows printPrg
-
       - name: Run make install
         run: make install
 
-      - name: Print env var again
-        run: make -C install/windows printPath
-
+  build:
+      - uses: actions/checkout@v2
       - name: Run make build
         run: make build
-
-      - name: Make box available as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: vagrantbox
-          path: packer/output-hashistack/package.box
