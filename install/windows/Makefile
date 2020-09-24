@@ -6,6 +6,7 @@ VBOXMANAGE="vboxmanage.exe"
 export
 
 export PATH := $(PATH):"C:\Program Files\Oracle\VirtualBox"
+export PATH := $(PATH):"C:\Program Files\"
 
 .ONESHELL .PHONY: prereq check_upgrade stop_vbox install_virtualbox hashicorp_gpg install_vagrant configure_vagrant install_packer
 .DEFAULT_GOAL := check_upgrade
@@ -73,4 +74,4 @@ printPath:
 	@echo "PATH:`${PATH}`"
 
 printPrg:
-	@echo "PROGRAMFILES:`${PROGRAMFILES}`"
+	@echo "%programfiles%"

@@ -8,10 +8,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Run print path
+        run: make printPath
       - name: Run make install
         run: make install
-      - name: Run vagrant
-        run: which vagrant
+      - name: Run print path again
+        run: make printPath
+      - name: Run print pf
+        run: make printPrg
 
   build:
     needs: install
