@@ -6,7 +6,6 @@ VBOXMANAGE="vboxmanage.exe"
 export
 
 export PATH := $(PATH);"C:\Program Files\Oracle\VirtualBox"
-export PATH := $(PATH);"C:\Program Files\"
 export PATH := $(PATH);"C:\HashiCorp\Vagrant\bin"
 
 .ONESHELL .PHONY: prereq check_upgrade stop_vbox install_virtualbox hashicorp_gpg install_vagrant configure_vagrant install_packer
@@ -53,9 +52,9 @@ install_vagrant:
 	(cd /tmp; sha256sum --ignore-missing -c vagrant_SHA256SUMS)
 	TMPDIR=$(cygpath -d /tmp)
 	ls -lrt /tmp
-	#(cd /tmp; msiexec //i vagrant_2.2.7_x86_64.msi //quiet //qn //norestart || true)
+	(cd /tmp; msiexec //i vagrant_2.2.10_x86_64.msi //quiet //qn //norestart || true)
 	#msiexec //i "/tmp/vagrant_2.2.7_x86_64.msi"  //qn //norestart || true
-	choco install vagrant --version=2.2.10
+	#choco install vagrant --version=2.2.10
 	vagrant
 	#SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt vagrant plugin install vagrant-certificates
 	rm /tmp/vagrant_SHA256SUMS /tmp/vagrant_SHA256SUMS.sig /tmp/vagrant_${VAGRANT_VERSION}_${INSTALLFORMAT}
@@ -77,9 +76,3 @@ install_packer:
 
 printPath:
 	@echo "PATH:`${PATH}`"
-
-printPrg:
-	@echo "%programfiles%"
-
-
-	This installation package could not be opened.  Verify that the package exists and that you can access it, or contact the application vendor to verify that this is a valid Windows Installer package
