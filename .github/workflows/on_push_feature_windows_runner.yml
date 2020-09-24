@@ -9,11 +9,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Print env var
+        run: make -C install/windows printPath
+
       - name: Run make install
         run: make install
-
-      - name: Versions on runner
-        run: make -C install versions
 
       - name: Run make build
         run: make build
