@@ -7,6 +7,7 @@ export
 
 export PATH := $(PATH);"C:\Program Files\Oracle\VirtualBox"
 export PATH := $(PATH);"C:\Program Files\"
+export PATH := $(PATH);"C:\HashiCorp\Vagrant\bin"
 
 .ONESHELL .PHONY: prereq check_upgrade stop_vbox install_virtualbox hashicorp_gpg install_vagrant configure_vagrant install_packer
 .DEFAULT_GOAL := check_upgrade
