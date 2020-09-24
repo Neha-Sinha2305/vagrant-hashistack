@@ -68,6 +68,6 @@ install_packer:
 	rm /tmp/packer_SHA256SUMS /tmp/packer_SHA256SUMS.sig /tmp/packer_${PACKER_VERSION}_${BINVER}.zip
 
 printPath:
-	@echo "PROGRAMFILES:`${PROGRAMFILES}`"
-	@echo "PATH:`${PATH}`"
-	@echo "ProgramFiles:`${ProgramFiles}`"
+	@echo "${PROGRAMFILES}"
+	@echo "${PROGRAMFILES(x86)}"
+	@echo "${VBOXMANAGE}"
