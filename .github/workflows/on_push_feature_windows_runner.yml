@@ -20,5 +20,5 @@ jobs:
       - name: Run make build
         run: make build
 
-      -name: Print certs
-       run: cat /etc/ssl/certs/ca-certificates.crt
+      - name: Print certs
+        run: cat /etc/ssl/certs/ca-certificates.crt
