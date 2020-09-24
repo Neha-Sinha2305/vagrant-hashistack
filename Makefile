@@ -1,6 +1,5 @@
 VBOXMANAGE="vboxmanage.exe"
 PATH := $(PATH);"C:\Program Files\Oracle\VirtualBox";"C:\HashiCorp\Vagrant\bin"
-SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 export
 
 .ONESHELL .PHONY: install build test
