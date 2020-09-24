@@ -4,7 +4,7 @@ on:
     branches: [ test_on_windows ]
 
 jobs:
-  install:
+  install_and_build:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
