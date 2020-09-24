@@ -17,13 +17,9 @@ jobs:
       - name: Run print path again
         run: make -C install/windows printPath
 
-      - name: Run make build
-        run: make build
-
-      - name: Print certs
-        run: cat /etc/ssl/certs/ca-certificates.crt
 
   test:
+    needs: install_and_build
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
